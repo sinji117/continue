@@ -2,24 +2,27 @@
 <div class='main'>
   <div class='title-contents'>
     <h2 class='service-title'>
-      あなたは今勝っています！
+      <%= "#{current_user.name}さん今勝っています！"%>
     </h2>
     <h2 class='service-title'>
-      本日残り1000kcal <br>
-      本日残り1000円
+      <%= "本日残り#{current_user.metabolism}kcalです"%> <br>
+      <%= "本日残り#{current_user.day_money}円です"%>
     </h2>
  </div>
 <div class='item-contents'>
     <h2 class='title'>
-    <%= link_to '昨日より前の戦績', "#", class: "subtitle" %>
+    <%= link_to '今日の記録する', new_food_path, class: "black-btn" %>
     </h2>
     <h2 class='title'>
-    <%= link_to '今までの累計見る？', "#", class: "subtitle" %>
+    <%= link_to '昨日より前の戦績', "#", class: "blue-btn" %>
     </h2>
     <h2 class='title'>
-    <%= link_to '痩せるや太るの本質', "#", class: "subtitle" %>
+    <%= link_to '今までの累計見る', "#", class: "red-btn" %>
     </h2>
     <h2 class='title'>
-    <%= link_to 'pfcバランスとは？', "#", class: "subtitle" %>
+    <%= link_to '痩せるや太るの本質', "#", class: "orange-btn" %>
+    </h2>
+    <h2 class='title'>
+    <%= link_to 'pfcバランスとは？', "#", class: "palevioletred-btn" %>
     </h2>
 </div>

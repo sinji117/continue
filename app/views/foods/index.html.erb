@@ -1,6 +1,7 @@
 
 <div class='main'>
-
+<%= link_to 'まいステータス', user_path(current_user), class: "subtitle" %>
+ 
   <div class='title-contents'>
     <h2 class='service-title'>
       あなたは今勝っています！
@@ -10,14 +11,14 @@
       本日残り1000円
     </h2>
     <h2 class='service-title'>
-      ＜食費と体重減らしたい方集合！＞<br>
+      ＜食費と体重減らしたい方必見！＞<br>
     </h2>
  
   </div>
 
   <div class='select-reason-contents'>
     <h2 class='title'>
-      知ろう！
+      食費とkcal管理の同時管理
     </h2>
     <ul class='reason-lists'>
       <li class='list'>
@@ -41,7 +42,7 @@
         <%= image_tag "9e2e4adcffa79c4df161f62e18b1f108_t.jpeg", class:"list-pict" %>
         <span class='reason-list-number'>3</span>
         <h3 class='reason-list-text'>
-          振り返る！
+          現状を知れる！振り返えれる！
           <span class='reason-list-blue-text'>人間昨日食べたもの忘れます</span>
         </h3>
         <p class='reason-list-description'>
@@ -83,7 +84,7 @@
           毎日の記録の継続習慣化で体型も家計も丸わかり！
         </h3>
         <p class='feature-list-description'>
-          今までの累計kcalも知れるよ！
+          今までの累計kcal、金額も知れるよ！検索機能で前食べ物もすぐわかる！
         </p>
       </li>
     </ul>
@@ -91,8 +92,7 @@
   
   <div class='item-contents'>
     <h2 class='title'>
-    <%= link_to '今日から継続はじめよう！', "#", class: "subtitle" %> <br>
-    <%= link_to 'まいステータス', user_path(current_user), class: "subtitle" %>
+    <%= link_to '今日から継続はじめよう！登録しよう！', "#", class: "subtitle" %> <br>
     </h2>
   </div>
 
@@ -103,4 +103,40 @@
       どれだけお金使っていいの？ <br>
       もう悩まなくていい！
     </h2>
-</div>    
+</div>   
+
+<div class='select-reason-contents'>
+    <h2 class='title'>
+      利用者の感想
+    </h2>
+    <ul class='reason-lists'>
+      <li class='list'>
+        <%= image_tag "yasanei_themb.jpg", class:"list-pict" %>
+        <h3 class='reason-list-text'>
+        こんなに使っていたの？！ <br>
+        1日3000円から <br>
+        1日1000円に
+        </h3>
+        宅配でご飯を頼むことが多い現代知らず知らずに食費が嵩んで家計を圧迫していました。現状を手軽に知れるこのアプリは手放せません
+      </li>
+      <li class='list'> 
+        <%= image_tag "yasanei_themb.jpg", class:"list-pict" %>
+        <h3 class='reason-list-text'>
+        こんなに食べていたの？！<br>
+        1日2700kcalから <br>
+        1日1700kcalに
+        </h3>
+        宅配でご飯を頼むことが多い現代知らず知らずに食費が嵩んで家計を圧迫していました。現状を手軽に知れるこのアプリは手放せません
+      </li>
+      <li class='list'> 
+        <%= image_tag "yasanei_themb.jpg", class:"list-pict" %>
+        <h3 class='reason-list-text'>
+        こんなに食べていたの？！<br>
+        1日2700kcalから <br>
+        1日1700kcalに
+        </h3>
+        宅配でご飯を頼むことが多い現代知らず知らずに食費が嵩んで家計を圧迫していました。現状を手軽に知れるこのアプリは手放せません
+      </li>
+    </ul>
+  </div>
+

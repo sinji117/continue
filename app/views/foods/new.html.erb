@@ -1,0 +1,44 @@
+<div class="items-sell-contents">
+  
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">商品の情報を入力</h2>
+    <%= form_with model: @food, local: true do |f| %>
+
+   
+   
+    <div class="new-items">
+      <div class="weight-bold-text">
+        食べた物
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <div class="weight-bold-text">
+        kcal（まとめ買い時や調味料などは0にしよう）
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :kcal, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <div class="weight-bold-text">
+        買い物額
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :money, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          メモ（後で検索の際に役に立つかも☺️）
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :note, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+  
+    <div class="caution">
+     本日残り1000kcal <br>
+     本日残り1000円
+    </div>
+    <div class="sell-btn-contents">
+      <%= f.submit "記録する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  </div>
+  <% end %>
+</div>
