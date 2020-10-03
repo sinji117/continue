@@ -1,12 +1,16 @@
+<%= link_to 'top', root_path, class: "subtitle" %>
+<%= link_to '記録する', users_path, class: "subtitle" %>
+<%= link_to '週間記録', user_path(current_user), class: "subtitle" %>
+<%= link_to '平均値', edit_user_path(current_user), class: "subtitle" %>
  <div class='item-contents'>
     <h2 class='title'>
     <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: "検索で素早く記録！", class: "search-input" %>
+      <%= form.text_field :keyword, placeholder: "今まで食べた物は検索！", class: "search-input" %>
       <%= form.submit "検索", class: "search-btn" %>
     <% end %>
     </h2>
     <h2 class='title'>
-    <%= link_to '今日の記録する🔘', new_food_path, class: "black-btn" %>
+    <%= link_to '初めての食べ物はこちらから🔘', new_food_path, class: "black-btn" %>
     </h2>
 </div> 
   <% kcal = 0 %>
@@ -17,54 +21,15 @@
   <% end %>
 <div class='index-title'>
     <h2 class='service-title'>
-      <%= "#{current_user.name}さん今勝っています！"%>
+    <% if  current_user.metabolism.to_i - kcal < 0 || current_user.day_money - money < 0 %>
+      <%= "#{current_user.name}さん敗北しています"%>
+    <% else current_user.metabolism.to_i - kcal > 1 && current_user.day_money - money > 1 %>
+      <%= "#{current_user.name}さん勝っています！"%>
+    <% end %>
+      
     </h2>
     <h2 class='service-title'>
       <%= "本日残り#{current_user.metabolism.to_i - kcal }kcalです"%> <br>
       <%= "本日残り#{current_user.day_money- money }円です"%>
     </h2>
-</div>
-<h2 class='week-title'>
-  <%= "⬇️⬇️⬇️⬇️週間記録⬇️⬇️⬇️⬇️"%>
-</h2>
- <%= week_calendar events: @food do |date, food| %>
-  <%= date %> <br>
-  <% sum = 0 %>
-  <% price = 0 %>
-  <% fight = ["勝利！", "敗北。。。"]%>
-  <% fight.each do |f| %>
-  <div>
-    <%= f %>
-  </div>
-  <% end %>
-<% end %>
-<div class='item-contents'>
-    <h2 class='title'>
-    <%= link_to 'カロリー回復する方法', "#", class: "orange-btn" %>
-    </h2>
-    <h2 class='title'>
-    <%= link_to '痩せるや太るの本質🔘', "#", class: "orange-btn" %>
-    </h2>
-    <h2 class='title'>
-    <%= link_to 'pfcバランスとは？🔘', "#", class: "palevioletred-btn" %>
-</h2>
-</div>
-
-<div class='main'>
-  <% kcal = 0 %>
-  <% money = 0 %>
-  <% @food.each do |food| %>
-    <% kcal += food.kcal %>
-    <% money += food.money %>
-  <% end %>
-  <div class='footer-contents'>
-    <h2 class='service-title'>
-      <%= "38戦25勝13負"%>
-    </h2>
-    <h2 class='service-title'>
-      <%= "今まで総合#{ kcal }kcalです" %> <br>
-      <%= "今まで総合#{ money }円です" %> <br>
-      <%= link_to "今まで食べたもの見にいく", user_path(current_user)%>
-    </h2>
-  </div>
 </div>

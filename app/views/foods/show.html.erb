@@ -1,1 +1,7 @@
-カロリ、」値段
+<%= link_to 'top', root_path, class: "subtitle" %>
+<%= link_to '記録する', users_path, class: "subtitle" %>
+<%= link_to '週間記録', user_path(current_user), class: "subtitle" %>
+<%= link_to '平均値', edit_user_path(current_user), class: "subtitle" %>
+<%= @food.kcal %>
+<%= @food.money %>
+コスパ指数

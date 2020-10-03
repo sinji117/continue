@@ -1,55 +1,48 @@
 
 <div class='main'>
-<%= link_to 'まいステータス', users_path, class: "subtitle" %>
+<%= link_to 'top', root_path, class: "subtitle" %>
+<%= link_to '記録する', users_path, class: "subtitle" %>
+<%= link_to '週間記録', users_path, class: "subtitle" %>
+<%= link_to '今までの累計', users_path, class: "subtitle" %>
  
   <div class='title-contents'>
     <h2 class='service-title'>
-      あなたは今勝っています！
+      『continue！』 継続アプリだよ
     </h2>
-    <h2 class='service-title'>
-      本日残り1000kcal <br>
-      本日残り1000円
-    </h2>
-    <h2 class='service-title'>
-      ＜食費と体重減らしたい方必見！＞<br>
-    </h2>
- 
   </div>
 
   <div class='select-reason-contents'>
     <h2 class='title'>
-      食費とkcal管理の同時管理
+      こんな事ないですか？
     </h2>
     <ul class='reason-lists'>
       <li class='list'>
-        <%= image_tag "yasanei_themb.jpg", class:"list-pict" %>
+        <%= image_tag "https://www.silhouette-illust.com/wp-content/uploads/2019/10/person_omoiukaberu_46871-300x300.jpg", class:"list-pict" %>
         <span class='reason-list-number'>1</span>
         <h3 class='reason-list-text'>
           <span class='reason-list-blue-text'>昨日何食べた？</span>
-          すぐに言える人は少ないのでは？
-          それが一週間前なら誰も覚えていないはず
-         </h3>
+        </h3>
       </li>
       <li class='list'>
-        <%= image_tag "money_fueru.png", class:"list-pict" %>
+        <%= image_tag "https://www.silhouette-illust.com/wp-content/uploads/2019/10/person_omoiukaberu_46871-300x300.jpg", class:"list-pict" %>
         <span class='reason-list-number'>2</span>
         <h3 class='reason-list-text'>
-          <span class='reason-list-blue-text'>食費との関係性</span>
-          食べ過ぎればそれだけ食費がかさみます
+          <span class='reason-list-blue-text'>１日の食費にどれくらい使ってんだ？</span>
         </h3>
       </li>
       <li class='list'>
-        <%= image_tag "9e2e4adcffa79c4df161f62e18b1f108_t.jpeg", class:"list-pict" %>
+        <%= image_tag "https://www.silhouette-illust.com/wp-content/uploads/2019/10/person_omoiukaberu_46871-300x300.jpg", class:"list-pict" %>
         <span class='reason-list-number'>3</span>
         <h3 class='reason-list-text'>
-          現状を知れる！振り返えれる！
-          <span class='reason-list-blue-text'>人間昨日食べたもの忘れます</span>
+          <span class='reason-list-blue-text'>最近何故だが太ってきたな</span>
         </h3>
-        <p class='reason-list-description'>
-          自分のデータを保存し、いつでも見れます！
-        </p>
       </li>
     </ul>
+  </div>
+  <div class='title-contents'>
+  <h2 class='service-title'>
+      全て解決できます！
+  </h2>
   </div>
 
 
@@ -61,30 +54,32 @@
     </h2>
     <ul class='feature-lists'>
       <li class='list'>
-        <%= image_tag "", class:"list-pict" %>
+        <%= image_tag "https://www.silhouette-illust.com/wp-content/uploads/2019/10/person_46477-300x300.jpg", class:"list-pict" %>
         <h3 class='feature-list-text'>
-          基礎代謝と予定額の入力してね！
+          登録しよう
         </h3>
         <p class='feature-list-description'>
-          基礎代謝は登録画面からすぐわかるから安心してね
+          基礎代謝などを教えてね <br>
+          ※基礎代謝はすぐに分かります！
         </p>
       </li>
       <li class='list'>
-        <%= image_tag "", class:"list-pict" %>
+        <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_XdrJqlYaZMnnd5iKCshCaKE7r4uzJOv6Cw&usqp=CAU", class:"list-pict" %>
         <h3 class='feature-list-text'>
-          毎日食べるものを記録！
+          毎日記録
         </h3>
         <p class='feature-list-description'>
-          自分の体に入れるkcalを調べてみよう
+          継続することが大事<br>
+          そして自分の目標値と勝負だ！
         </p>
       </li>
       <li class='list'>
-        <%= image_tag "", class:"list-pict" %>
+        <%= image_tag "https://www.silhouette-illust.com/wp-content/uploads/2016/06/2929-300x300.jpg", class:"list-pict" %>
         <h3 class='feature-list-text'>
-          毎日の記録の継続習慣化で体型も家計も丸わかり！
+          スッキリ！！
         </h3>
         <p class='feature-list-description'>
-          今までの累計kcal、金額も知れるよ！検索機能で前食べ物もすぐわかる！
+          継続し勝ち続けることで家計も体型もスッキリに
         </p>
       </li>
     </ul>
@@ -92,46 +87,9 @@
   
   <div class='item-contents'>
     <h2 class='title'>
-    <%= link_to '今日から継続はじめよう！登録しよう！', "#", class: "subtitle" %> <br>
+    <%= link_to '登録はこちら', "#", class: "subtitle" %> <br>
     </h2>
   </div>
 
 </div>
-<div class='title-contents'>
-    <h2 class='service-title'>
-      毎日どれくらい食べていいの？<br>
-      どれだけお金使っていいの？ <br>
-      このアプリ一つでもう悩まなくていい！
-    </h2>
-</div>   
-
-<div class='select-reason-contents'>
-    <h2 class='title'>
-      このアプリ一つであなたの家計と体型を全て管理出来ます！
-    </h2>
-    <ul class='reason-lists'>
-      <li class='list'>
-        <%= image_tag "yasanei_themb.jpg", class:"list-pict" %>
-        <h3 class='reason-list-text'>
-        食事とkcalの関係性を知れる
-        </h3>
-        お腹も膨らめば家計も膨らみます
-      </li>
-      <li class='list'> 
-        <%= image_tag "yasanei_themb.jpg", class:"list-pict" %>
-        <h3 class='reason-list-text'>
-        自分の体のこと知れる 
-        </h3>
-        １日の終わりに調子をチェックしよう<br>
-        何を食べたら調子がいいか？大切な自分の体のことを知れます
-      </li>
-      <li class='list'> 
-        <%= image_tag "yasanei_themb.jpg", class:"list-pict" %>
-        <h3 class='reason-list-text'>
-        自分の体のこと知れる 
-        </h3>
-        宅配でご飯を頼むことが多い現代知らず知らずに食費が嵩んで家計を圧迫していました。現状を手軽に知れるこのアプリは手放せません
-      </li>
-    </ul>
-  </div>
 

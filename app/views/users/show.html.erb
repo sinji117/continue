@@ -1,9 +1,59 @@
+<%= link_to 'top', root_path, class: "subtitle" %>
+<%= link_to '記録する', users_path, class: "subtitle" %>
+<%= link_to '週間記録', user_path(current_user), class: "subtitle" %>
+<%= link_to '平均値', edit_user_path(current_user), class: "subtitle" %>
+
+   
+
+<h2 class='week-title'>
+  <%= "⬇️⬇️⬇️⬇️週間記録⬇️⬇️⬇️⬇️"%>
+</h2>
+
+ <%= week_calendar events: @foods do |date, food| %>
+  <%= date %> <br>
+  <% kcal = 0 %>
+  <% money = 0 %>
+  <% food.each do |f| %>
+  <% kcal += f.kcal %>
+  <% money += f.money %>
+  <% current_user.metabolism.to_i - kcal  %> <br>
+  <% current_user.day_money - money %>
+  <% end %>
+  <% fight = ["勝利しました！", "敗北しました。。。", "記録なし"]%>
+  <% if kcal && money == 0 %>
+    <%= fight[2] %>
+  <% elsif current_user.metabolism.to_i - kcal < 0 || current_user.day_money - money < 0 %>
+    <%= fight[1] %>
+  <% else current_user.metabolism.to_i - kcal > 1 && current_user.day_money - money > 1 %>
+   <%= fight[0] %>
+  <% end %>
+  <% end %>
+  <h2 class='service-title'>
+    <%= "今週5勝1負"%>
+    <%= Date.today.day %>
+    <%= "現在カロリオバー" %>
+  
+
+  </h2>
+<div class='item-contents'>
+    <h2 class='title'>
+    <%= link_to 'カロリー回復する方法', "#", class: "orange-btn" %>
+    </h2>
+    <h2 class='title'>
+    <%= link_to '痩せるや太るの本質🔘', "#", class: "orange-btn" %>
+    </h2>
+    <h2 class='title'>
+    <%= link_to 'pfcバランスとは？🔘', "#", class: "palevioletred-btn" %>
+</h2>
+</div>
+
 食べたもの一覧
-<%= week_calendar events: @food do |date, food| %>
+<%= week_calendar events: @foods do |date, food| %>
  <%= date %>
   <% food.each do |f| %>
   <div>
     <%= link_to f.name, f %>
   </div>
+ 
   <% end %>
-<% end %>
+  <% end %>
