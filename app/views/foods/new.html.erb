@@ -8,6 +8,13 @@
    
     <div class="new-items">
       <div class="weight-bold-text">
+        食べた日
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="time">
+        <%= f.date_select :start_time, class:"items-text", id:"item-name", discard_year:true, use_month_numbers:true %>日
+      </div>
+      <div class="weight-bold-text">
         食べた物
         <span class="indispensable">必須</span>
       </div>

@@ -6,7 +6,7 @@ class FoodsController < ApplicationController
   def create
     @food = Food.create(food_params)
     if @food.save
-      redirect_to user_path(current_user)
+      redirect_to users_path(current_user)
     else
       render :new
     end
@@ -15,6 +15,6 @@ class FoodsController < ApplicationController
   private
 
   def food_params
-    params.require(:food).permit(:name, :kcal, :money, :note).merge(user_id: current_user.id)
+    params.require(:food).permit(:name, :kcal, :money, :note, :start_time).merge(user_id: current_user.id)
   end
 end
