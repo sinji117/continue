@@ -1,0 +1,45 @@
+.index-title {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background: -moz-linear-gradient(top, #FFF, #FFC778 30%, #F89174 60%, #748af8);
+  background: -webkit-linear-gradient(top, #FFF, #FFC778 30%, #F89174 60%, #748af8);
+  background: linear-gradient(to bottom, #FFF, #FFC778 30%, #F89174 60%, #748af8);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.footer-contents {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background: -moz-radial-gradient(#F13F79 20%, #FFC778 70%);
+  background: -webkit-radial-gradient(#F13F79 20%, #FFC778 70%);
+  background: radial-gradient(#F13F79 20%, #FFC778 70%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.week-title {
+  font-size: 8vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}

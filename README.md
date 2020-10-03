@@ -14,13 +14,14 @@
 
 ## foods テーブル
 
-| Column | Type      | Options          |
-| ------ | --------- | ---------------- |
-| user   | reference | foreign_key:true |
-| name   | string    | null: false      |
-| kcal   | integer   | null: false      |
-| money  | integer   | null: false      |
-| note   | string    |                  |
+| Column     | Type      | Options          |
+| ---------- | --------- | ---------------- |
+| user       | reference | foreign_key:true |
+| name       | string    | null: false      |
+| kcal       | integer   | null: false      |
+| money      | integer   | null: false      |
+| note       | string    |                  |
+| start_time | datetime  | null: false      |
 
 ### Association
 

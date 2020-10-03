@@ -1,33 +1,9 @@
-<div class='main'>
-<% kcal = 0 %>
-<% money = 0 %>
-<% @food.each do |food| %>
-  <% kcal += food.kcal %>
-  <% money += food.money %>
+食べたもの一覧
+<%= week_calendar events: @food do |date, food| %>
+ <%= date %>
+  <% food.each do |f| %>
+  <div>
+    <%= link_to f.name, f %>
+  </div>
+  <% end %>
 <% end %>
-<div class='title-contents'>
-    <h2 class='service-title'>
-      <%= "#{current_user.name}さん昨日より前の戦績"%>
-    </h2>
-    <h2 class='service-title'>
-      <%= "38戦25勝13負"%>
-    </h2>
-    <h2 class='service-title'>
-      <%= "今まで総合#{ kcal }kcalです" %> <br>
-      <%= "今まで総合#{ money }円です" %>
-    </h2>
- </div>
-<div class='item-contents'>
-    <h2 class='title'>
-    <%= link_to '今日の記録する', new_food_path, class: "black-btn" %>
-    </h2>
-    <h2 class='title'>
-    <%= link_to '各日にちの戦績を見る', new_food_path, class: "black-btn" %>
-    </h2>
-    <h2 class='title'>
-    <%= link_to '痩せるや太るの本質', "#", class: "orange-btn" %>
-    </h2>
-    <h2 class='title'>
-    <%= link_to 'pfcバランスとは？', "#", class: "palevioletred-btn" %>
-    </h2>
-</div>
