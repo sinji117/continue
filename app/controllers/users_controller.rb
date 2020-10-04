@@ -1,14 +1,19 @@
 class UsersController < ApplicationController
   def index
-    @food = current_user.foods.where("created_at > ?", Date.today)
+    @food = Food.all.where("created_at > ?", Date.today)
+
+    #@food = current_user.foods.where("created_at > ?", Date.today)
     @foods = current_user.foods
   end
 
   def show
-    @foods = current_user.foods
+    @food = Food.all.limit(7)
+    #@food = current_user.foods.order(start_time: :desc).limit(7)
   end
 
   def edit
-    @foods = current_user.foods
+    @food = Food.all
+    #@foods = current_user.foods
+
   end
 end
