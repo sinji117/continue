@@ -1,3 +1,11 @@
+## 📊 お困りじゃないですか？
+# 1,日々の家計と体型を一括管理できます！
+<h3 align="center">- PWA -</h3>
+
+<p align="center">
+  <img src="https://i.gyazo.com/38e3dfcefe28bcb0c611b186da68a63d.png" width=40%>
+</p>
+
 ## 🌐 App URL
 
 ### **https://continues.herokuapp.com/**
@@ -11,6 +19,47 @@
 <p align="center">
   <img src="https://i.gyazo.com/38e3dfcefe28bcb0c611b186da68a63d.png" width=70%>  
 </p>　
+
+## 📊 環境開発
++ ruby
++ rails
++ VSCode（Visual Studio Code）
+
+
+
+
+## 📊 アプリ機能
+# 1,日々の家計と体型を一括管理できます！
+<h3 align="center">- PWA -</h3>
+
+<p align="center">
+  <img src="https://i.gyazo.com/38e3dfcefe28bcb0c611b186da68a63d.png" width=40%>
+</p>
+
+
+# 2,使い方は簡単！日々、食べた物の登録だけ！
+<h3 align="center">- PWA -</h3>
+
+<p align="center">
+  <img src="https://i.gyazo.com/38e3dfcefe28bcb0c611b186da68a63d.png" width=40%>
+</p>
+
+# 3,毎日、自分の設定した目標と戦いましょう
+<h3 align="center">- PWA -</h3>
+
+<p align="center">
+  <img src="https://i.gyazo.com/38e3dfcefe28bcb0c611b186da68a63d.png" width=40%>
+</p>
+
+# 4,1週間単位、生涯成績が見れていつでも振り返る！
+<h3 align="center">- PWA -</h3>
+
+<p align="center">
+  <img src="https://i.gyazo.com/38e3dfcefe28bcb0c611b186da68a63d.png" width=40%>
+</p>
+
+
+
 
 # テーブル設計
 
