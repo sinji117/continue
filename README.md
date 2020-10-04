@@ -59,6 +59,13 @@
 </p>
 
 
+# ER図
+https://drive.google.com/file/d/1jPXOCJZ_Z9wNFrYIVAXDYC2hP7av7Zzi/view?usp=sharing
+# ページ遷移図
+https://drive.google.com/file/d/1jPXOCJZ_Z9wNFrYIVAXDYC2hP7av7Zzi/view?usp=sharing
+
+
+
 
 
 # テーブル設計
