@@ -14,5 +14,6 @@ class UsersController < ApplicationController
   def edit
     @food = Food.all
     #@foods = current_user.foods
+
   end
 end

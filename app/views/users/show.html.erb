@@ -9,6 +9,7 @@
 <%= link_to '本日の成績', users_path, class: "subtitle" %>
 <%= link_to '週間成績', user_path(current_user), class: "subtitle" %>
 <%= link_to '生涯成績', edit_user_path(current_user), class: "subtitle" %>
+
 <div class='item-contents'>
   <h2 class='title'>
   <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
