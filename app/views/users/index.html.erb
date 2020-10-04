@@ -1,35 +1,48 @@
+<% kcal = 0 %>
+<% money = 0 %>
+<% @food.each do |food| %>
+  <% kcal += food.kcal %>
+  <% money += food.money %>
+<% end %>
 <%= link_to 'top', root_path, class: "subtitle" %>
-<%= link_to '記録する', users_path, class: "subtitle" %>
-<%= link_to '週間記録', user_path(current_user), class: "subtitle" %>
-<%= link_to '平均値', edit_user_path(current_user), class: "subtitle" %>
- <div class='item-contents'>
-    <h2 class='title'>
-    <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: "今まで食べた物は検索！", class: "search-input" %>
-      <%= form.submit "検索", class: "search-btn" %>
-    <% end %>
-    </h2>
-    <h2 class='title'>
-    <%= link_to '初めての食べ物はこちらから🔘', new_food_path, class: "black-btn" %>
-    </h2>
-</div> 
-  <% kcal = 0 %>
-  <% money = 0 %>
-  <% @food.each do |food| %>
-    <% kcal += food.kcal %>
-    <% money += food.money %>
+<%= link_to '本日の成績', users_path, class: "subtitle" %>
+<%= link_to '週間成績', user_path(current_user), class: "subtitle" %>
+<%= link_to '生涯成績', edit_user_path(current_user), class: "subtitle" %>
+<div class='item-contents'>
+  <h2 class='title'>
+  <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "今まで食べた物は検索！", class: "search-input" %>
+    <%= form.submit "検索", class: "search-btn" %> <br>
+    <%= link_to '食べ物を記録🔘', new_food_path, class: "red-btn" %>
   <% end %>
+  </h2>
+  <h2 class='graph'>
+    <%= pie_chart({"摂取可能kcal" => current_user.metabolism.to_i, "摂取kcal" => kcal}) %>
+    <%= pie_chart [["使えるお金", current_user.day_money ], ["使ったお金", money]] %>
+  </h2>
+  <h2 class='service-title'>
+    <%= "本日残り#{current_user.metabolism.to_i - kcal }kcalです"%> <br>
+    <%= "本日残り#{current_user.day_money - money }円です"%>
+  </h2>
+</div> 
+
 <div class='index-title'>
-    <h2 class='service-title'>
-    <% if  current_user.metabolism.to_i - kcal < 0 || current_user.day_money - money < 0 %>
-      <%= "#{current_user.name}さん敗北しています"%>
-    <% else current_user.metabolism.to_i - kcal > 1 && current_user.day_money - money > 1 %>
-      <%= "#{current_user.name}さん勝っています！"%>
-    <% end %>
-      
-    </h2>
-    <h2 class='service-title'>
-      <%= "本日残り#{current_user.metabolism.to_i - kcal }kcalです"%> <br>
-      <%= "本日残り#{current_user.day_money- money }円です"%>
-    </h2>
+  <h2 class='service-title'>
+  <% if  current_user.metabolism.to_i - kcal < 0 || current_user.day_money - money < 0 %>
+    <%= "#{current_user.name}さん敗北しています"%>
+  <% else current_user.metabolism.to_i - kcal > 1 && current_user.day_money - money > 1 %>
+    <%= "#{current_user.name}さん勝っています！"%>
+  <% end %>
+  </h2>
 </div>
+
+
+
+
+
+
+
+
+
+                 
+
