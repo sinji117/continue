@@ -20,6 +20,10 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
   end
 
+  def search
+    @food = Food.search(params[:keyword])
+  end
+
   private
 
   def food_params
