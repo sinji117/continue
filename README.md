@@ -48,14 +48,14 @@
 <h3 align="center">- PWA -</h3>
 
 <p align="center">
-  <img src="https://i.gyazo.com/38e3dfcefe28bcb0c611b186da68a63d.png" width=40%>
+  <img src="https://i.gyazo.com/f4d9b015fd666a6c25bf74195e303b22.png" width=40%>
 </p>
 
 # 4,1週間単位、生涯成績が見れていつでも振り返る！
 <h3 align="center">- PWA -</h3>
 
 <p align="center">
-  <img src="https://i.gyazo.com/38e3dfcefe28bcb0c611b186da68a63d.png" width=40%>
+  <img src="https://i.gyazo.com/ab483caaab1205c17db989268a117f5d.png" width=40%>
 </p>
 
 
