@@ -38,9 +38,9 @@
 
 
 # 2,使い方は簡単！日々、食べた物の登録だけ！
-<h3 align="center2">- PWA -</h3>
+<h3 align="center">- PWA -</h3>
 
-<p align="center2">
+<p align="center">
   <img src="https://camo.githubusercontent.com/5f208e1e6cff696c967377811f2eaa39642f8b77/68747470733a2f2f692e6779617a6f2e636f6d2f38663733386135613838323034333462323261396663333237363561343262362e706e67" width=40%>
 </p>
 
