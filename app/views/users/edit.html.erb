@@ -11,7 +11,7 @@
 <% end %>
 <div class='item-contents'>
     <h2 class='title'>
-    <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
+    <%= form_with(url: search_foods_path, local: true, method: :get, class: "search-form") do |form| %>
       <%= form.text_field :keyword, placeholder: "今まで食べた物は検索！", class: "search-input" %>
       <%= form.submit "検索", class: "search-btn" %> <br>
       <% end %>
@@ -19,8 +19,8 @@
     <%= "登録してから#{ money }円使って#{ kcal }kcal摂取しました"%>
     <h2 class='graph'>
        
-      <%= pie_chart({"摂取可能kcal" => current_user.metabolism.to_i * registration_days , "摂取kcal" => kcal}) %>
-      <%= pie_chart [["使えるお金", current_user.day_money * registration_days ], ["使ったお金", money]] %>
+      <%= pie_chart({"摂取可能kcal" => current_user.metabolism.to_i * (registration_days + 1) , "摂取kcal" => kcal}) %>
+      <%= pie_chart [["使えるお金", current_user.day_money * (registration_days + 1) ], ["使ったお金", money]] %>
     </h2>
     <h2 class='service-title'>
     <% if current_user.metabolism.to_i > 0 %>
