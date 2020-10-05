@@ -3,7 +3,7 @@
 <h3 align="center">- 家計と体型は密接な関係があります -</h3>
 
 <p align="center">
-  <img src="ttps://i.gyazo.com/ab483caaab1205c17db989268a117f5d.png" width=40%>
+  <img src="https://i.gyazo.com/c55d2420f5e14b65db521946292018e2.png" width=40%>
 </p>
 
 ## 🌐 App URL
@@ -52,7 +52,7 @@
 </p>
 
 # 4,1週間単位、生涯成績が見れていつでも振り返る！
-<h3 align="center">- チェック機能で毎日の調子も把握 -</h3>
+<h3 align="center">- チェック機能もあり毎日の調子も把握出来ます！ -</h3>
 
 <p align="center">
   <img src="https://i.gyazo.com/ab483caaab1205c17db989268a117f5d.png" width=40%>
