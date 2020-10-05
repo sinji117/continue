@@ -13,18 +13,21 @@
     <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
       <%= form.text_field :keyword, placeholder: "今まで食べた物は検索！", class: "search-input" %>
       <%= form.submit "検索", class: "search-btn" %> <br>
-       <%= link_to '食べ物を記録🔘', new_food_path, class: "red-btn" %>
+      <%= link_to '食べ物を記録🔘', new_food_path, class: "red-btn" %> <br>
+      <%= link_to '生涯記録🔘', new_food_path, class: "red-btn" %>
     <% end %>
     </h2>
     <h2 class='graph'>
        
-      <%= pie_chart({"摂取可能kcal" => current_user.metabolism.to_i, "摂取kcal" => kcal}) %>
-      <%= pie_chart [["使えるお金", current_user.day_money ], ["使ったお金", money]] %>
+      <%= pie_chart({"摂取可能kcal" => current_user.metabolism.to_i * 7, "摂取kcal" => kcal}) %>
+      <%= pie_chart [["使えるお金", current_user.day_money * 9 ], ["使ったお金", money]] %>
     </h2>
       <h2 class='service-title'>
-            <%= "生涯成績"%> <br>
-            <%= "#{current_user.metabolism.to_i - kcal }kcalです"%> <br>
-            <%= "#{current_user.day_money - money }円です"%>
+            <%= "減った体脂肪1.2kg"%> <br>
+            <%= "予定より3987円節約しています"%> <br>
+            <%= "素晴らしい成績ですね！"%> 
+            <%# "#{current_user.metabolism.to_i - kcal }kcalです"%> <br>
+            <%# "#{current_user.day_money - money }円です"%>
 </div> 
 
 <div class='index-title'>

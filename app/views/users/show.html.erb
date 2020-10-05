@@ -19,12 +19,12 @@
   <% end %>
   </h2>
   <h2 class='graph'>
-    <%= pie_chart({"摂取可能kcal" => current_user.metabolism.to_i, "摂取kcal" => kcal}) %>
-    <%= pie_chart [["使えるお金", current_user.day_money ], ["使ったお金", money]] %>
+    <%= pie_chart({"週間摂取可能kcal" => current_user.metabolism.to_i * 7, "摂取kcal" => kcal}) %>
+    <%= pie_chart [["使えるお金", current_user.day_money * 7 ], ["使ったお金", money]] %>
   </h2>
   <h2 class='service-title'>
-    <%= "本日残り#{current_user.metabolism.to_i - kcal }kcalです"%> <br>
-    <%= "本日残り#{current_user.day_money - money }円です"%>
+    <%= "週間成績は#{current_user.metabolism.to_i * 7 - kcal }kcalです"%> <br>
+    <%= "週間成績は#{current_user.day_money * 7 - money }円です"%>
   </h2>
 </div> 
 
@@ -39,6 +39,9 @@
 </div>
 <div class='index-title'>
  <h2 class='service-title'>
+ <h2 class='title'>
+   <%= "⬇️⬇️⬇️⬇️⬇️⬇️週間記録⬇️⬇️⬇️⬇️⬇️⬇️"%>
+ </h2>
  <%= column_chart @food.group(:start_time).sum(:kcal), max: current_user.metabolism.to_i, id: 'total-attendance-chart',
                  width: '500px',
                  height: '300px',
