@@ -17,7 +17,7 @@ class FoodsController < ApplicationController
   end
 
   def show
-    @foods = current_user.foods
+    @food = Food.find(params[:id])
   end
 
   private

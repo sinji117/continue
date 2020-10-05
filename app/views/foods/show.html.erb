@@ -1,2 +1,6 @@
-
-コスパ指数
+<%= @food.name %>
+<%= @food.money %>
+<%= @food.kcal %>
+<% cospa = @food.money / @food.kcal %>
+コスパ指数 = <%=  cospa %>
+※コスパ指数とは高いと安くてkcalが高い
