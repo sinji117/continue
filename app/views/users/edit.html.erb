@@ -1,45 +1,37 @@
+<%= render "shared/header"%>
+<% input_date = current_user.created_at %>
+<% registration_days = Time.now - current_user.created_at %>
+<% registration_days = registration_days / 86400 %>
+<% registration_days = registration_days.floor(0) %>
 <% kcal = 0 %>
 <% money = 0 %>
-<% @food.each do |food| %>
+<% @foods.each do |food| %>
   <% kcal += food.kcal %>
   <% money += food.money %>
 <% end %>
-<%= link_to 'top', root_path, class: "subtitle" %>
-<%= link_to '本日の成績', users_path, class: "subtitle" %>
-<%= link_to '週間成績', user_path(current_user), class: "subtitle" %>
-<%= link_to '生涯成績', edit_user_path(current_user), class: "subtitle" %>
 <div class='item-contents'>
     <h2 class='title'>
     <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
       <%= form.text_field :keyword, placeholder: "今まで食べた物は検索！", class: "search-input" %>
       <%= form.submit "検索", class: "search-btn" %> <br>
-      <%= link_to '食べ物を記録🔘', new_food_path, class: "red-btn" %> <br>
-      <%= link_to '生涯記録🔘', new_food_path, class: "red-btn" %>
-    <% end %>
+      <% end %>
     </h2>
+    <%= "登録してから#{ money }円使って#{ kcal }kcal摂取しました"%>
     <h2 class='graph'>
        
-      <%= pie_chart({"摂取可能kcal" => current_user.metabolism.to_i * 7, "摂取kcal" => kcal}) %>
-      <%= pie_chart [["使えるお金", current_user.day_money * 9 ], ["使ったお金", money]] %>
+      <%= pie_chart({"摂取可能kcal" => current_user.metabolism.to_i * registration_days , "摂取kcal" => kcal}) %>
+      <%= pie_chart [["使えるお金", current_user.day_money * registration_days ], ["使ったお金", money]] %>
     </h2>
-      <h2 class='service-title'>
-            <%= "減った体脂肪1.2kg"%> <br>
-            <%= "予定より3987円節約しています"%> <br>
-            <%= "素晴らしい成績ですね！"%> 
-            <%# "#{current_user.metabolism.to_i - kcal }kcalです"%> <br>
-            <%# "#{current_user.day_money - money }円です"%>
+    <h2 class='service-title'>
+    <% if current_user.metabolism.to_i > 0 %>
+      <%= "素晴らしい！"%> <br>
+      <% fat = (current_user.metabolism.to_i * registration_days - kcal) / 7200.to_f %>
+      <%= "週間で#{fat.floor(2)}kg減っています！"%> <br>
+      <%= "予定より#{current_user.day_money * registration_days - money }円節約しています"%> <br>
+    <% end %>
+  </h2>
 </div> 
 
-<div class='index-title'>
-    <h2 class='service-title'>
-    <% if  current_user.metabolism.to_i - kcal < 0 || current_user.day_money - money < 0 %>
-      <%= "#{current_user.name}さん敗北しています"%> <br>
-    <% else current_user.metabolism.to_i - kcal > 1 && current_user.day_money - money > 1 %>
-      <%= "#{current_user.name}さん勝っています！"%> <br>
-    <% end %>
-    </h2>
-    
-  
-</div>
+
 
 

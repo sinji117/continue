@@ -1,13 +1,24 @@
 
+<% if user_signed_in? %>
+ <div class='header-contents'>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "subtitle" %>
+  <%= link_to '記録する', new_food_path, class: "subtitle2" %>
+  <%= link_to '本日の成績', users_path, class: "subtitle3" %>
+  <%= link_to '週間成績', user_path(current_user), class: "subtitle4" %>
+  <%= link_to '生涯成績', edit_user_path(current_user), class: "subtitle5" %>
+</div>
+<% else %>
+  <div class='header-contents'>
+    <%= link_to "ログイン", new_user_session_path, class: "subtitle2" %>
+    <%= link_to "新規登録", new_user_registration_path, class: "subtitle2" %>
+  </div>
+<% end %>
+
 <div class='main'>
-<%= link_to 'top', root_path, class: "subtitle" %>
-<%= link_to '記録する', users_path, class: "subtitle" %>
-<%= link_to '週間記録', users_path, class: "subtitle" %>
-<%= link_to '今までの累計', users_path, class: "subtitle" %>
- 
+
   <div class='title-contents'>
     <h2 class='service-title'>
-      『continue！』 継続アプリだよ
+      家計と体型を2つ同時に管理！
     </h2>
   </div>
 
@@ -86,10 +97,23 @@
   </div>
   
   <div class='item-contents'>
-    <h2 class='title'>
-    <%= link_to '登録はこちら', "#", class: "subtitle" %> <br>
-    </h2>
+  <% if user_signed_in? %>
+  <h2>体調カレンダー</h2> <br>
+  クリックでその日食べた物がわかるよ！
+  <%= month_calendar events: @foods do |date, food| %>
+  <%= date %>
+  <% condition = ["⭕️", "❌", "🌸"] %>
+  <%= condition.sample %>
+  <% food.each do |f| %>
+    <div>
+     <%# link_to condition, f%>
+    </div>
+  <% end %>
+  <% end %>
+  <% else %>
+  <div class='header-contents'>
+      <%= link_to "新規登録", new_user_registration_path, class: "subtitle2" %>
   </div>
+  <% end %>
 
 </div>
-

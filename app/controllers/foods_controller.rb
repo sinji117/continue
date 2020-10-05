@@ -1,4 +1,8 @@
 class FoodsController < ApplicationController
+  def index
+    @foods = Food.all
+  end
+
   def new
     @food = Food.new
   end
@@ -13,7 +17,7 @@ class FoodsController < ApplicationController
   end
 
   def show
-    @food = Food.find(params[:id])
+    @foods = current_user.foods
   end
 
   private
