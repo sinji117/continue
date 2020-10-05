@@ -51,11 +51,11 @@
   <img src="https://i.gyazo.com/f4d9b015fd666a6c25bf74195e303b22.png" width=40%>
 </p>
 
-# 4,1週間単位、生涯成績が見れていつでも振り返る！
-<h3 align="center">- チェック機能もあり毎日の調子も把握出来ます！ -</h3>
+# 4,調子が良い日に何を食べていたか？
+<h3 align="center">- チェック機能もあり毎日の調子も把握出来ます！クリックでその日何を食べていたかすぐ分かる！ -</h3>
 
 <p align="center">
-  <img src="https://i.gyazo.com/ab483caaab1205c17db989268a117f5d.png" width=40%>
+  <img src="https://i.gyazo.com/7b6989acd7b7b47bd638495ffc7d8e73.png" width=40%>
 </p>
 
 
