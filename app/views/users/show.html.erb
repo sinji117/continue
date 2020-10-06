@@ -18,13 +18,27 @@
     <%= pie_chart({"週間摂取可能kcal" => current_user.metabolism.to_i * 7, "週間摂取kcal" => kcal}) %>
     <%= pie_chart [["週間可能額", current_user.day_money * 7 ], ["週間使用額", money]] %> <br> 
   </h2>
+  <% fat = (current_user.metabolism.to_i * 7 - kcal) / 7200.to_f %>
+  <% week_money = current_user.day_money * 7 - money %>
+
   <h2 class='service-title'>
-  <% if current_user.metabolism.to_i > 0 %>
+  <% if fat > 0 && week_money > 0 %>
     <%= "素晴らしい！"%> <br>
-    <% fat = (current_user.metabolism.to_i * 7 - kcal) / 7200.to_f %>
     <%= "週間で#{fat.floor(2)}kg減っています！"%> <br>
-     <%= "予定より#{current_user.day_money * 7 - money }円節約しています"%> <br>
-    <% end %>
+    <%= "予定より#{week_money}円節約しています"%> 
+  <% elsif fat > 0 && week_money < 0 %>
+    <%= "惜しい！" %> <br>
+    <%= "週間で#{fat.floor(2)}kg減っています！"%> <br>
+    <%= "しかし予定より#{-week_money}円使いすぎています"%> 
+  <% elsif fat < 0 && week_money > 0 %>
+     <%= "残念" %> <br>
+     <%= "週間で#{-fat.floor(2)}kg増えています！"%> <br>
+     <%= "しかし！予定より#{week_money}円節約しています"%> 
+  <% else %>
+    <%= "残念" %> <br>
+    <%= "週間で#{-fat.floor(2)}kg増えています！"%> <br>
+    <%= "予定より#{-week_money}円使いすぎています"%>
+  <% end %>
   </h2>
 </div> 
 

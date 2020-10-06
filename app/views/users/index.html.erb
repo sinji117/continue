@@ -26,10 +26,14 @@
 
 <div class='index-title'>
   <h2 class='service-title'>
-  <% if  current_user.metabolism.to_i - kcal < 0 || current_user.day_money - money < 0 %>
-    <%= "残念。赤に押されています。。"%>
-  <% else current_user.metabolism.to_i - kcal > 1 && current_user.day_money - money > 1 %>
-     <%= "いいですね 青が勝っています"%>
+  <% if  current_user.metabolism.to_i - kcal < 0 && current_user.day_money - money < 0 %>
+    <%= "完全敗北です"%>
+  <% elsif current_user.metabolism.to_i - kcal > 0 && current_user.day_money - money < 0 %>
+    <%= "節約だけ頑張りましょう！"%>
+  <% elsif current_user.metabolism.to_i - kcal < 0 && current_user.day_money - money > 0 %>
+    <%= "食べ過ぎのようですね！"%>
+  <% else %>
+    <%= "完全勝利です！！"%>
   <% end %>
   </h2>
 </div>
