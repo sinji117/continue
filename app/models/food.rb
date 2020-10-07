@@ -3,7 +3,6 @@ class Food < ApplicationRecord
     validates :name
     validates :kcal, numericality: { only_integer: true, greater_than: 1, less_than: 100000 }
     validates :money, numericality: { only_integer: true, greater_than: 1, less_than: 100000 }
-    belongs_to :user
   end
   def self.search(search)
     if search != ""
@@ -13,4 +12,5 @@ class Food < ApplicationRecord
       Food.all
     end
   end
+  belongs_to :user
 end
