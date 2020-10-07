@@ -28,19 +28,19 @@
 
   <% if fat.floor(2) > 0 && registration_money > 0 %>
     <%= "素晴らしい！"%> <br>
-    <%= "週間で#{fat.floor(2)}kg減っています！"%> <br>
+    <%= "登録してから#{fat.floor(2)}kg減っています！"%> <br>
     <%= "予定より#{registration_money}円節約しています"%> <br>
   <% elsif fat.floor(2) > 0 && registration_money < 0 %>
     <%= "惜しい！" %> <br>
-    <%= "週間で#{fat.floor(2)}kg減っています！"%> <br>
+    <%= "登録してから#{fat.floor(2)}kg減っています！"%> <br>
     <%= "しかし予定より#{-registration_money}円使いすぎています"%> 
   <% elsif fat.floor(2) < 0 && registration_money > 0 %>
      <%= "残念" %> <br>
-     <%= "週間で#{-fat.floor(2)}kg増えています！"%> <br>
+     <%= "登録してから#{-fat.floor(2)}kg増えています！"%> <br>
      <%= "しかし！予定より#{registration_money}円節約しています"%> 
   <% else %>
     <%= "残念" %> <br>
-    <%= "週間で#{-fat.floor(2)}kg増えています！"%> <br>
+    <%= "登録してから#{-fat.floor(2)}kg増えています！"%> <br>
     <%= "予定より#{-registration_money}円使いすぎています"%>
   <% end %>
   </h2>

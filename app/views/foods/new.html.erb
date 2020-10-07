@@ -4,8 +4,7 @@
   <div class="items-sell-main">
     <h2 class="items-sell-title">記録する</h2>
     <%= form_with model: @food, local: true do |f| %>
-
-   
+    <%= render 'shared/error_messages', model: f.object %>
    
     <div class="new-items">
       <div class="weight-bold-text">
@@ -33,7 +32,6 @@
       <div class="items-explain">
         <div class="weight-bold-text">
           メモ
-          <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :note, class:"items-text", id:"item-info", placeholder:"検索できるようになるからメモしておこう！例）セブンイレブンなど"  ,maxlength:"1000" %>
       </div>

@@ -9,7 +9,7 @@ class Food < ApplicationRecord
       Food.where("name LIKE(?)", "%#{search}%")
       Food.where("note LIKE(?)", "%#{search}%")
     else
-      Food.all
+      Food.all.limit(1)
     end
   end
   belongs_to :user
