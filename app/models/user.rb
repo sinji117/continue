@@ -4,7 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :foods
-  validates :name, presence: true
-  validates :day_money, presence: true
-  validates :metabolism, presence: true
+
+  with_options presence: true do
+    validates :name, length: { maximum: 40 }
+    validates :day_money, numericality: { only_integer: true, greater_than: 1, less_than: 100000 }
+    validates :metabolism, numericality: { only_integer: true, greater_than: 1, less_than: 5000 }
+  end
 end
