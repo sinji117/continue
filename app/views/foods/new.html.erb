@@ -5,7 +5,18 @@
     <h2 class="items-sell-title">記録する</h2>
     <%= form_with model: @food, local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
-   
+   <div class="img-upload">
+      <div class="weight-bold-text">
+        出品画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
     <div class="new-items">
       <div class="weight-bold-text">
         食べた日
@@ -42,5 +53,10 @@
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
   </div>
+  
+  
   <% end %>
 </div>
+
+
+    
