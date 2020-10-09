@@ -2,7 +2,7 @@ class FoodsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @foods = Food.all
+    @foods = current_user.foods if user_signed_in?
   end
 
   def new
