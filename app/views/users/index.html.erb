@@ -15,7 +15,7 @@
   </h2>
   <%= "本日は#{ money }円使って#{ kcal }kcal摂取しました"%>
   <h2 class='graph'>
-    <%= pie_chart({"摂取可能kcal" => current_user.metabolism.to_i, "摂取kcal" => kcal}) %>
+    <%= pie_chart({"基礎代謝" => current_user.metabolism.to_i, "摂取kcal" => kcal}) %>
     <%= pie_chart [["使えるお金", current_user.day_money ], ["使ったお金", money]] %>
   </h2>
   <h2 class='service-title'>

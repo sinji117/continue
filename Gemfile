@@ -60,7 +60,8 @@ gem "pry-rails"
 gem "simple_calendar", "~> 2.0"
 gem "chartkick"
 group :production do
-  gem "rails_12factor"
+  #gem "rails_12factor"
+  gem "unicorn", "5.4.1"
 end
 gem "mini_magick"
 gem "image_processing", "~> 1.2"

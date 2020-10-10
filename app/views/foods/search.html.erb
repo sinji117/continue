@@ -13,6 +13,7 @@
       <th>kcal</th>
       <th>金額</th>
       <th>メモ</th>
+      <th>前回食べた日</th>
       </tr>
       <tr>
       <% @food.each do |food| %>
@@ -20,6 +21,7 @@
         <th> <%= food.kcal %>kcal</th>
         <th><%= food.money %>円</th>
         <th><%= food.note %> <br></th>
+        <th><%= food.created_at %> <br></th>
         </tr>
       <% end %>
       </table>
