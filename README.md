@@ -9,6 +9,8 @@
 ## 🌐 App URL
 
 ### **https://continues.herokuapp.com/**
+AWSで稼働しております
+### **http://54.95.199.7:3000**
 
 ## 💬 Usage
 
