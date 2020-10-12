@@ -26,7 +26,7 @@
 
 ## 📊 アプリ機能
 # 1,日々の家計と体型を一括管理できます！
-<h3 align="center">- PWA -</h3>
+<h3 align="center">- なんと記録する人はしない人に比べて2倍の減量効果があるという事実 -</h3>
 
 <p align="center">
   <img src="https://i.gyazo.com/38e3dfcefe28bcb0c611b186da68a63d.png" width=40%>
