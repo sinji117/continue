@@ -1,6 +1,6 @@
-## 📊 家計と体型を2つ同時に管理！
-# 日々の家計と体型を一括管理できます！
-<h3 align="center">- 家計と体型は密接な関係があります -</h3>
+## 📊 家計と体型を2つ同時に管理！日々の家計と体型を一括管理できます！
+# なぜ作ったのか？知って欲しいから！
+<h3 align="center">- 家計と体型は密接な関係があることを知って欲しい！ -</h3>
 
 <p align="center">
   <img src="https://i.gyazo.com/c55d2420f5e14b65db521946292018e2.png" width=40%>
@@ -26,7 +26,7 @@
 
 ## 📊 アプリ機能
 # 1,日々の家計と体型を一括管理できます！
-<h3 align="center">- PWA -</h3>
+<h3 align="center">- なんと記録する人はしない人に比べて2倍の減量効果があるという事実 -</h3>
 
 <p align="center">
   <img src="https://i.gyazo.com/38e3dfcefe28bcb0c611b186da68a63d.png" width=40%>
@@ -40,8 +40,8 @@
   <img src="https://camo.githubusercontent.com/5f208e1e6cff696c967377811f2eaa39642f8b77/68747470733a2f2f692e6779617a6f2e636f6d2f38663733386135613838323034333462323261396663333237363561343262362e706e67" width=40%>
 </p>
 
-# 3,毎日、自分の設定した目標と戦いましょう
-<h3 align="center">- 青色を残多く残せばあなたの勝ち！ -</h3>
+# 3,毎日、自分の設定した2つの目標と戦いましょう
+<h3 align="center">- 今までになかった、2つの管理が同時にできるアプリです！ -</h3>
 
 <p align="center">
   <img src="https://i.gyazo.com/f4d9b015fd666a6c25bf74195e303b22.png" width=40%>
