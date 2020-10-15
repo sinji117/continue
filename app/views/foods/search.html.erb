@@ -6,7 +6,8 @@
     <%= form.submit "検索", class: "search-btn" %>
   <% end %>
     <div class="contents row">
-    検索結果
+    検索結果<br>
+    ※マイフードに登録すればワンタッチで記録できるようになるよ！
       <table border="1">
       <tr>
       <th>食品名</th>
@@ -14,6 +15,7 @@
       <th>金額</th>
       <th>メモ</th>
       <th>前回食べた日</th>
+      <th>マイフード</th>
       </tr>
       <tr>
       <% @food.each do |food| %>
@@ -22,6 +24,7 @@
         <th><%= food.money %>円</th>
         <th><%= food.note %> <br></th>
         <th><%= food.created_at %> <br></th>
+        <th><%= link_to '登録', "#", class: "subtitle" %></th>
         </tr>
       <% end %>
       </table>

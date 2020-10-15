@@ -2,6 +2,11 @@
 <div class="items-sell-contents">
   
   <div class="items-sell-main">
+  ※マイフード記録に登録すれば簡単に記録出るようになるよ！<br>
+  <div class='header-contents'>
+  
+  <%= link_to 'マイフードリスト', "#", class: "subtitle" %>
+  </div>
     <h2 class="items-sell-title">記録する</h2>
     <%= form_with model: @food, local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
