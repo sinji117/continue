@@ -10,39 +10,37 @@
   <% money += food.money %>
 <% end %>
 <div class='item-contents'>
-    <h2 class='title'>
+  <h2 class='title'>
     <%= form_with(url: search_foods_path, local: true, method: :get, class: "search-form") do |form| %>
       <%= form.text_field :keyword, placeholder: "今まで食べた物は検索！", class: "search-input" %>
       <%= form.submit "検索", class: "search-btn" %> <br>
-      <% end %>
-    </h2>
-    <%= "登録してから#{ money }円使って#{ kcal }kcal摂取しました"%>
-    <h2 class='graph'>
-       
-      <%= pie_chart({"摂取可能kcal" => current_user.metabolism.to_i * (registration_days + 1) , "摂取kcal" => kcal}) %>
-      <%= pie_chart [["使えるお金", current_user.day_money * (registration_days + 1) ], ["使ったお金", money]] %>
-    </h2>
-    <h2 class='service-title'>
-  <% fat = (current_user.metabolism.to_i * (registration_days + 1) - kcal) / 7200.to_f %>
-  <% registration_money = current_user.day_money * (registration_days + 1) - money %>
-
-  <% if fat.floor(2) > 0 && registration_money > 0 %>
-    <%= "素晴らしい！"%> <br>
-    <%= "登録してから#{fat.floor(2)}kg減っています！"%> <br>
-    <%= "予定より#{registration_money}円節約しています"%> <br>
-  <% elsif fat.floor(2) > 0 && registration_money < 0 %>
-    <%= "惜しい！" %> <br>
-    <%= "登録してから#{fat.floor(2)}kg減っています！"%> <br>
-    <%= "しかし予定より#{-registration_money}円使いすぎています"%> 
-  <% elsif fat.floor(2) < 0 && registration_money > 0 %>
-     <%= "残念" %> <br>
-     <%= "登録してから#{-fat.floor(2)}kg増えています！"%> <br>
-     <%= "しかし！予定より#{registration_money}円節約しています"%> 
-  <% else %>
-    <%= "残念" %> <br>
-    <%= "登録してから#{-fat.floor(2)}kg増えています！"%> <br>
-    <%= "予定より#{-registration_money}円使いすぎています"%>
-  <% end %>
+    <% end %>
+  </h2>
+  <%= "登録してから#{ money }円使って#{ kcal }kcal摂取しました"%>
+  <h2 class='graph'>
+    <%= pie_chart({"摂取可能kcal" => current_user.metabolism.to_i * (registration_days + 1) , "摂取kcal" => kcal}) %>
+    <%= pie_chart [["使えるお金", current_user.day_money * (registration_days + 1) ], ["使ったお金", money]] %>
+  </h2>
+  <h2 class='service-title'>
+    <% fat = (current_user.metabolism.to_i * (registration_days + 1) - kcal) / 7200.to_f %>
+    <% registration_money = current_user.day_money * (registration_days + 1) - money %>
+    <% if fat.floor(2) > 0 && registration_money > 0 %>
+      <%= "素晴らしい！"%> <br>
+      <%= "登録してから#{fat.floor(2)}kg減っています！"%> <br>
+      <%= "予定より#{registration_money}円節約しています"%> <br>
+    <% elsif fat.floor(2) > 0 && registration_money < 0 %>
+      <%= "惜しい！" %> <br>
+      <%= "登録してから#{fat.floor(2)}kg減っています！"%> <br>
+      <%= "しかし予定より#{-registration_money}円使いすぎています"%> 
+    <% elsif fat.floor(2) < 0 && registration_money > 0 %>
+       <%= "残念" %> <br>
+       <%= "登録してから#{-fat.floor(2)}kg増えています！"%> <br>
+       <%= "しかし！予定より#{registration_money}円節約しています"%> 
+    <% else %>
+      <%= "残念" %> <br>
+      <%= "登録してから#{-fat.floor(2)}kg増えています！"%> <br>
+      <%= "予定より#{-registration_money}円使いすぎています"%>
+    <% end %>
   </h2>
 </div> 
 

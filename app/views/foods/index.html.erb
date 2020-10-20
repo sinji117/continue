@@ -1,13 +1,11 @@
-
-
 <% if user_signed_in? %>
- <div class='header-contents'>
-  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "subtitle" %>
-  <%= link_to '記録する', new_food_path, class: "subtitle2" %>
-  <%= link_to '本日の成績', users_path, class: "subtitle3" %>
-  <%= link_to '週間成績', user_path(current_user), class: "subtitle4" %>
-  <%= link_to '生涯成績', edit_user_path(current_user), class: "subtitle5" %>
- </div>
+  <div class='header-contents'>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "subtitle" %>
+    <%= link_to '記録する', new_food_path, class: "subtitle2" %>
+    <%= link_to '本日の成績', users_path, class: "subtitle3" %>
+    <%= link_to '週間成績', user_path(current_user), class: "subtitle4" %>
+    <%= link_to '生涯成績', edit_user_path(current_user), class: "subtitle5" %>
+  </div>
 <% else %>
   <div class='header-contents'>
     <%= link_to "ログイン", new_user_session_path, class: "subtitle2" %>
@@ -16,13 +14,11 @@
 <% end %>
 
 <div class='main'>
-
   <div class='title-contents'>
     <h2 class='service-title'>
       家計と体型を2つ同時に管理！
     </h2>
   </div>
-
   <div class='select-reason-contents'>
     <h2 class='title'>
       こんな事ないですか？
@@ -56,10 +52,6 @@
       全て解決できます！
   </h2>
   </div>
-
-
-
-
   <div class='feature-contents'>
     <h2 class='title'>
       continueの使い方
@@ -96,26 +88,24 @@
       </li>
     </ul>
   </div>
-  
   <div class='item-contents'>
-  <% condition = ["⭕️", "❌", "🔺"] %>
-  <% if user_signed_in? %>
-  <h2>体調カレンダー</h2> <br>
-  クリックで食べた物の詳細がわかるよ！<br>
-  その日のコンディション<%= condition %> 
-  <%= month_calendar events: @foods do |date, food| %>
-  <%= date %> <br>
-  <% if date < Time.now  %>
-  <%= condition.sample %> <br>
-  <% end %>
-  <% food.each do |f| %>
-     <%= link_to f.name, f %> <br>
-  <% end %>
-  <% end %>
-  <% else %>
-  <div class='header-contents'>
-      <%= link_to "新規登録", new_user_registration_path, class: "subtitle2" %>
+    <% condition = ["⭕️", "❌", "🔺"] %>
+    <% if user_signed_in? %>
+      <h2>体調カレンダー</h2> <br>
+      クリックで食べた物の詳細がわかるよ！<br>
+      その日のコンディション<%= condition %> 
+      <%= month_calendar events: @foods do |date, food| %>
+        <%= date %> <br>
+        <% if date < Time.now  %>
+          <%= condition.sample %> <br>
+        <% end %>
+        <% food.each do |f| %>
+          <%= link_to f.name, f %> <br>
+        <% end %>
+      <% end %>
+    <% else %>
+      <div class='header-contents'>
+        <%= link_to "新規登録", new_user_registration_path, class: "subtitle2" %>
+      </div>
+    <% end %>
   </div>
-  <% end %>
-
-</div>

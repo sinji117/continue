@@ -1,54 +1,49 @@
 <%= render "shared/header"%>
 <div class="items-sell-contents">
-  
   <div class="items-sell-main">
-  ※マイフード記録に登録すれば簡単に記録出るようになるよ！<br>
-  <div class='header-contents'>
-  
-  <%= link_to 'マイフードリスト', "#", class: "subtitle" %>
-  </div>
+    ※マイフード記録に登録すれば簡単に記録出るようになるよ！<br>
+    <div class='header-contents'>
+      <%= link_to 'マイフードリスト', "#", class: "subtitle" %>
+    </div>
     <h2 class="items-sell-title">記録する</h2>
     <%= form_with model: @food, local: true do |f| %>
-    <%= render 'shared/error_messages', model: f.object %>
-    <div class="new-items">
-      <div class="weight-bold-text">
-        食べた日
-        <span class="indispensable">必須</span>
-      </div>
-      <div class="time">
-        <%= f.date_select :start_time, class:"items-text", id:"item-name", discard_year:true, use_month_numbers:true %>日
-      </div>
-      <div class="weight-bold-text">
-        食べた物
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"ラーメンなど", maxlength:"40" %>
-      <div class="weight-bold-text">
-        kcal（まとめ買い時や調味料などは0にしよう）
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_area :kcal, class:"items-text", id:"item-name", placeholder:"調べたkcalを入力", maxlength:"40" %>
-      <div class="weight-bold-text">
-        買い物額
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_area :money, class:"items-text", id:"item-name", placeholder:"かかった金額を入力", maxlength:"40" %>
-      <div class="items-explain">
+      <%= render 'shared/error_messages', model: f.object %>
+      <div class="new-items">
         <div class="weight-bold-text">
-          メモ
+          食べた日
+          <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :note, class:"items-text", id:"item-info", placeholder:"検索できるようになるからメモしておこう！例）セブンイレブンなど"  ,maxlength:"1000" %>
+        <div class="time">
+          <%= f.date_select :start_time, class:"items-text", id:"item-name", discard_year:true, use_month_numbers:true %>日
+        </div>
+        <div class="weight-bold-text">
+          食べた物
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"ラーメンなど", maxlength:"40" %>
+        <div class="weight-bold-text">
+          kcal（まとめ買い時や調味料などは0にしよう）
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :kcal, class:"items-text", id:"item-name", placeholder:"調べたkcalを入力", maxlength:"40" %>
+        <div class="weight-bold-text">
+          買い物額
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :money, class:"items-text", id:"item-name", placeholder:"かかった金額を入力", maxlength:"40" %>
+        <div class="items-explain">
+          <div class="weight-bold-text">
+            メモ
+          </div>
+          <%= f.text_area :note, class:"items-text", id:"item-info", placeholder:"検索できるようになるからメモしておこう！例）セブンイレブンなど"  ,maxlength:"1000" %>
+        </div>
       </div>
-    </div>
-  
-    <div class="sell-btn-contents">
-      <%= f.submit "記録する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
-    </div>
+      <div class="sell-btn-contents">
+        <%= f.submit "記録する" ,class:"sell-btn" %>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+    <% end %>
   </div>
-  
-  
-  <% end %>
 </div>
 
 

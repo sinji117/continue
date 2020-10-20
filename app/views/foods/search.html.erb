@@ -1,32 +1,32 @@
 <%= render "shared/header"%>
 <div class='item-contents'>
-<h2 class='title'>
-  <%= form_with(url: search_foods_path, local: true, method: :get, class: "search-form") do |form| %>
-    <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-    <%= form.submit "検索", class: "search-btn" %>
-  <% end %>
+  <h2 class='title'>
+    <%= form_with(url: search_foods_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
     <div class="contents row">
-    検索結果<br>
-    ※マイフードに登録すればワンタッチで記録できるようになるよ！
+      検索結果<br>
+      ※マイフードに登録すればワンタッチで記録できるようになるよ！
       <table border="1">
-      <tr>
-      <th>食品名</th>
-      <th>kcal</th>
-      <th>金額</th>
-      <th>メモ</th>
-      <th>前回食べた日</th>
-      <th>マイフード</th>
-      </tr>
-      <tr>
-      <% @food.each do |food| %>
-        <th> <%= food.name %> </th>
-        <th> <%= food.kcal %>kcal</th>
-        <th><%= food.money %>円</th>
-        <th><%= food.note %> <br></th>
-        <th><%= food.created_at %> <br></th>
-        <th><%= link_to '登録', "#", class: "subtitle" %></th>
+        <tr>
+        <th>食品名</th>
+        <th>kcal</th>
+        <th>金額</th>
+        <th>メモ</th>
+        <th>前回食べた日</th>
+        <th>マイフード</th>
         </tr>
-      <% end %>
+        <tr>
+        <% @food.each do |food| %>
+          <th> <%= food.name %> </th>
+          <th> <%= food.kcal %>kcal</th>
+          <th><%= food.money %>円</th>
+          <th><%= food.note %> <br></th>
+          <th><%= food.created_at %> <br></th>
+          <th><%= link_to '登録', "#", class: "subtitle" %></th>
+          </tr>
+        <% end %>
       </table>
     </div>
   </h2>

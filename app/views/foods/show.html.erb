@@ -1,12 +1,12 @@
 <%= render "shared/header"%>
 <div class='item-contents'>
-<h2 class='title'>
-  <%= @food.name %>
-  <%= @food.kcal %>kcal
-  <%= @food.money %>円
-<% cospa = @food.money / @food.kcal %>
-コスパ指数 = <%= cospa.to_f %> <br>
-※コスパ指数とは0だとお得！ <br>
-数値が大きいほど贅沢品だ
-</h2>
+  <h2 class='title'>
+    <%= @food.name %>
+    <%= @food.kcal %>kcal
+    <%= @food.money %>円
+    <% cospa = @food.money / @food.kcal %>
+    コスパ指数 = <%= cospa.to_f %> <br>
+    ※コスパ指数とは0だとお得！ <br>
+    数値が大きいほど贅沢品だ
+  </h2>
 </div>
