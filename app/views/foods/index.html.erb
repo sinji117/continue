@@ -6,10 +6,18 @@
     <%= link_to '週間成績', user_path(current_user), class: "subtitle4" %>
     <%= link_to '生涯成績', edit_user_path(current_user), class: "subtitle5" %>
   </div>
+  <div class='item-contents'>
+    <h2 class='service-title'>
+    ようこそゲストユーザーさん<br>
+      <%= "基礎代謝#{current_user.metabolism}kcal"%> <br>
+      <%= "１日に使える金額#{current_user.day_money}円"%> <br>
+    </h2>
+  </div>
 <% else %>
   <div class='header-contents'>
     <%= link_to "ログイン", new_user_session_path, class: "subtitle2" %>
     <%= link_to "新規登録", new_user_registration_path, class: "subtitle2" %>
+    <%= link_to 'ゲストユーザー', users_guest_sign_in_path, method: :post, class: "subtitle2" %>
   </div>
 <% end %>
 
