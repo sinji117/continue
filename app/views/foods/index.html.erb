@@ -93,7 +93,6 @@
     <% if user_signed_in? %>
       <h2>体調カレンダー</h2> <br>
       クリックで食べた物の詳細がわかるよ！<br>
-      その日のコンディション<%= condition %> 
       <%= month_calendar events: @foods do |date, food| %>
         <%= date %> <br>
         <% if date < Time.now  %>
