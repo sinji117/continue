@@ -12,4 +12,11 @@ class User < ApplicationRecord
   end
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,100}+\z/i
   validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX }
+
+  def self.guest
+    find_or_create_by!(email: "user@gmail.com") do |user|
+      user.password = SecureRandom.urlsafe_base64
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+    end
+  end
 end
