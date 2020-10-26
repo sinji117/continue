@@ -3,7 +3,7 @@
 <h3 align="center">- 家計と体型は密接な関係があることを知って欲しい！ -</h3>
 
 <p align="center">
-  <img src="https://i.gyazo.com/c55d2420f5e14b65db521946292018e2.png" width=40%>
+  <img src="https://i.gyazo.com/466c2dc6f26aeac1ce6d9912f943cc0b.gif" width=40%>
 </p>
 
 ## 🌐 App URL
