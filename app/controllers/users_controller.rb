@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     @foods = current_user.foods.where("created_at > ?", Date.today)
   end
 
+  def new
+    @food = Food.new
+  end
+
   def show
     #from = Time.current.at_beginning_of_day
     #to = (from + 6.day).at_end_of_day

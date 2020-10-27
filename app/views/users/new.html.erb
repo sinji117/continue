@@ -7,7 +7,7 @@
     </div>
      ※運動でkcalが回復！<br>
     <div class='header-contents'>
-      <%= link_to '運動記録！', new_user_path, class: "subtitle" %>
+      <%= link_to '運動記録！', "#", class: "subtitle" %>
     </div>
     <h2 class="items-sell-title">記録する</h2>
     <%= form_with model: @food, local: true do |f| %>
@@ -21,7 +21,7 @@
           <%= f.date_select :start_time, class:"items-text", id:"item-name", discard_year:true, use_month_numbers:true %>日
         </div>
         <div class="weight-bold-text">
-          食べた物
+          運動した物
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"ラーメンなど", maxlength:"40" %>
@@ -50,5 +50,3 @@
   </div>
 </div>
 
-
-    
