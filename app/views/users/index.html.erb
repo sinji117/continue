@@ -5,6 +5,10 @@
   <% kcal += food.kcal %>
   <% money += food.money %>
 <% end %>
+<% kcal2 = 0 %>
+<% @motions.each do |motion| %>
+  <% kcal2 += motion.kcal %>
+<% end %>
 <div class='item-contents'>
   <h2 class='title'>
     <%= form_with(url: search_foods_path, local: true, method: :get, class: "search-form") do |form| %>
@@ -14,7 +18,7 @@
   </h2>
   <%= "本日は#{ money }円使って#{ kcal }kcal摂取しました"%>
   <h2 class='graph'>
-    <%= pie_chart({"基礎代謝" => current_user.metabolism.to_i, "摂取kcal" => kcal}) %>
+    <%= pie_chart({"１日の合計代謝" => current_user.metabolism.to_i + kcal2, "摂取kcal" => kcal}) %>
     <%= pie_chart [["使えるお金", current_user.day_money ], ["使ったお金", money]] %>
   </h2>
   <h2 class='service-title'>

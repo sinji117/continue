@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :foods
-
+  has_many :motions
   with_options presence: true do
     validates :name, length: { maximum: 40 }
     validates :day_money, numericality: { only_integer: true, greater_than: 1, less_than: 100000 }

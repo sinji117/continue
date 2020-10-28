@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @foods = current_user.foods.where("created_at > ?", Date.today)
+    @motions = current_user.motions.where("created_at > ?", Date.today)
   end
 
   def new
