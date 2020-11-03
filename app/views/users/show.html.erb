@@ -5,6 +5,10 @@
   <% kcal += food.kcal %>
   <% money += food.money %>
 <% end %>
+<% kcal2 = 0 %>
+<% @motions.each do |motion| %>
+  <% kcal2 += motion.kcal %>
+<% end %>
 <div class='item-contents'>
   <h2 class='title'>
     <%= form_with(url: search_foods_path, local: true, method: :get, class: "search-form") do |form| %>
@@ -14,7 +18,7 @@
   </h2>
   <%= "週間は#{ money }円使って#{ kcal }kcal摂取しました"%>
   <h2 class='graph'>
-    <%= pie_chart({"週間摂取可能kcal" => current_user.metabolism.to_i * 7, "週間摂取kcal" => kcal}) %>
+    <%= pie_chart({"週間摂取可能kcal" => current_user.metabolism.to_i * 7 + kcal2, "週間摂取kcal" => kcal}) %>
     <%= pie_chart [["週間可能額", current_user.day_money * 7 ], ["週間使用額", money]] %> <br> 
   </h2>
   <% fat = (current_user.metabolism.to_i * 7 - kcal) / 7200.to_f %>
